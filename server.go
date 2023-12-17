@@ -83,24 +83,6 @@ func main() {
 		}
 		time.Sleep(30 * time.Second)
 	}	
-
-	/*
-	// Decode subscription
-	s := &webpush.Subscription{}
-	json.Unmarshal([]byte(subscription), s)
-
-	// Send Notification
-	resp, err := webpush.SendNotification([]byte("Test"), s, &webpush.Options{
-		Subscriber:      "example@example.com", // Do not include "mailto:"
-		VAPIDPublicKey:  vapidPublicKey,
-		VAPIDPrivateKey: vapidPrivateKey,
-		TTL:             30,
-	})
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer resp.Body.Close()
-	*/
 }
 
 func webPush(key string,rdb *redis.Client, m *SafeMap, url string,  keyword string, subscription string) {
